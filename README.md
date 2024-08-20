@@ -2,11 +2,11 @@ This is my personal repository for learning Python. I am not affiliated with Pyt
 
 ![Python Logo](/images/python-logo.png)
 
-# How to Learn Python
+# Learning Python
 
 ## Table of Contents
 
-- [How to Learn Python](#how-to-learn-python)
+- [Learning Python](#learning-python)
   - [Table of Contents](#table-of-contents)
   - [Set Clear Goals](#set-clear-goals)
   - [Learn the Basics](#learn-the-basics)
