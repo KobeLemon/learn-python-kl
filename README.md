@@ -25,7 +25,7 @@ Learning Python programming can be a rewarding experience, whether you're a comp
 
 ## Set Clear Goals
 
-Define what you want to achieve with Python. Are you interested in data science, web development, automation, or general programming? Your focus area will guide the resources and topics you prioritize.
+- Define what you want to achieve with Python. Are you interested in data science, web development, automation, or general programming? Your focus area will guide the resources and topics you prioritize.
 
 ## Learn the Basics
 
