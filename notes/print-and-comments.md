@@ -6,11 +6,17 @@
 
 - [Print Statements \& Comments](#print-statements--comments)
   - [Table of Contents](#table-of-contents)
+  - [Indentation](#indentation)
   - [Print Statement](#print-statement)
     - [Formatted String Literals (F-Strings)](#formatted-string-literals-f-strings)
-    - [Assignment Operators](#assignment-operators)
-    - [Arithmetic Operations](#arithmetic-operations)
   - [Comments](#comments)
+
+## Indentation
+
+- Indentation refers to the spaces at the beginning of a code line.
+- Where in other programming languages the indentation in code is for readability only, the indentation in Python is used to indicate a block of code.
+- The number of spaces doesn't matter, it just needs at least one space. The most common across the industry is four spaces & most code editors have four spaces set as default.
+- You need to use the same number of spaces in the same block of code. If you use fewer spaces, Python assumes lines with different number of spaces are not in the same block. If you use too many spaces & it doesn't make sense for those spaces to denote a nested block, Python will say "`IndentationError: unexpected indent`"
 
 ## Print Statement
 
@@ -30,7 +36,7 @@ The `print()` statement is used to display output on the screen, such as numbers
 
 - Adding one or more lines between two print statements does not affect the output. They will always only print on two lines.
 
-- When printing an numeric variable, you can perform [Arithmetic Operations](#arithmetic-operations) on the variable inside the `print()` statement.
+- When printing an numeric variable, you can perform [Arithmetic Operations](/notes/types-variables.md/#arithmetic-operations) on the variable inside the `print()` statement.
 
 - String concatenation will explained in the [String Variables](/notes/types-variables.md/#variables) section of [types-variables.md](/notes/types-variables.md).
 
@@ -87,75 +93,6 @@ print(f"My name is {first-name} {last-name} and I am {age} years old.") # Output
 print(f-string) # Output: My name is John Smith and I am 45 years old.
 
 # ----------- End of F-Strings Code Block ----------- #
-```
-
-### Assignment Operators
-
-- The Basic Assignment Operator is the single equals sign (`=`) and this assigns the value on its right to the variable on its left.
-
-- Compound Assignment Operators combine arithmetic operations with assignment. They are a shorthand way of performing operations on a variable & assigning the result back to the variable.
-
-- Compound Assignment Operators modify the actual variable itself so if you want leave that variable alone, you need to use a regular [Arithmetic Operation](#arithmetic-operations) that performs a math equation & assigns the result to a new variable.
-
-```python
-# ----------- Assignment Operators Code Block ----------- #
-
-# Basic Assignment Operator:
-length = 15
-
-# Without Compound Assignment Operators:
-length = 15
-length = length + 5 # Updates length by adding 5 to its current value
-print(length)  # Output: 20
-
-# Using Compound Assignment Operators:
-length = 15
-length += 5  # Shorthand for length = length + 5
-print(length)  # Output: 20
-
-# We can use any other operator in the same way:
-x -= 5  # Subtracts 5 from `x` and assigns the result back to `x`
-x *= 3  # Multiplies `x` by 3 and assigns the result back to `x`
-x /= 3  # Divides `x` by 3 and assigns the result back to `x`)
-x %= 3  # Finds the remainder when `x` is divided by 3 and assigns the result back to `x`
-
-# ----------- End of Assignment Operators Code Block ----------- #
-```
-
-### Arithmetic Operations
-
-- Mathematical/Arithmetic operations can be done inside of `print()` statements or inside of a variable assignment with any operator. There must be no quote marks, for if there is then it's treated as a string.
-
-```python
-# ----------- Arithmetic Operations Code Block ----------- #
-
-# Without quotes: The expression is evaluated, and the result is printed:
-print(2 + 4) # Output: 6
-
-# With quotes: The expression is treated as text (a string) and printed as is:
-print("2 + 4") # Output: 2 + 4
-
-a = 6
-b = 3
-print(a + b)  # Output: 9
-print(a * b)  # Output: 18
-print(a / b)  # Output: 2.0
-# Integer Division (//) divides the numbers & returns a whole number, discarding the remainder
-result = 10 // 3 # Output: 3 : 10 / 3 = 3.333.... & 0.333... is dropped.
-
-# Modulo (%) returns the remainder of a division
-print(a % b) # Output: 0 : No remainder from 6 / 3
-
-# Exponent (**) raises a number to the power of another number.
-print(a ** b)  # Output: 216 : 6 to the power of 3 is 216 (6 * 6 * 6)
-
-# Variable Assignment
-age = 45 + 23
-print(age) # Output: 68
-c = a + b
-print(c) # Output: 9
-
-# ----------- End of Arithmetic Operations Code Block ----------- #
 ```
 
 ## Comments

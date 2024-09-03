@@ -12,7 +12,7 @@
 
 - Hard coding values into variables is often necessary, but often you may need a user's input, especially with things such as forms, games, to do lists, etc.
 
-- The `input()` function can be used to pause the program and ask the user for input, then their input will be stores into a variable, then that variable can be used later. Once the user gives their input, the program continues.
+- The `input()` function can be used to pause the program and ask the user for input, then their input will be stored into a string variable, then that variable can be used later. Once the user gives their input, the program continues. The text entered can consist of almost any alphanumeric values. (A-Z, a-z, 0-9, spaces, ( ) { } - _ + =, etc.)
 
 - `input()` by default stores the user input as a string so if you want the user to enter a different datatype, such as a number, you can convert it to use that type with this syntax: `type(input())`.
 
@@ -41,7 +41,7 @@ print(string) # Output: Hello World!
 number = int(input()) # Input: 12
 print(number) # Output: 12
 
-# Split Input
+# Split Input - space-sensitive
 a, b, c, d = input().split() # Input: Air Water Earth Fire
 print(d) # Output: Fire
 print(c) # Output: Earth
@@ -52,5 +52,5 @@ print(a) # Output: Air
 a, b, c = map(int, input().split()) # Input: 1 2 3
 print(a + b + c) # Output: 6
 
-# ----------- User Input Code Block ----------- #
+# ----------- End of User Input Code Block ----------- #
 ```

@@ -11,6 +11,8 @@
   - [String Variables](#string-variables)
     - [String Functions](#string-functions)
     - [String Repetition](#string-repetition)
+    - [Assignment Operators](#assignment-operators)
+    - [Arithmetic Operations](#arithmetic-operations)
 
 ## Variables
 
@@ -30,6 +32,10 @@
 
 - Other languages use keywords (`int, string, double`, etc.) to denote what type the variable will be, such as `int variableName = valueHere;` in C# denotes an integer variable. Python does not use these keywords because it is an ambiguously typed language.
 
+- You can assign multiple values to multiple variables (one value per variable) in one line. If the number of values does not match (less or more) the number of variables, Python will say `ValueError: not enough values to unpack` or `ValueError: too many values to unpack`.
+
+- You can assign one value to multiple variables in one line.
+
 - Rules for Python variable names:
   
   - A variable name can only contain alphabets, numbers and underscores (ie. A-Z, a-z, 0-9, and _).
@@ -41,6 +47,8 @@
   - Variable names are case-sensitive (age, Age, aGe, agE, AGe, aGE, AgE, and AGE are all different variables).
 
 - Continue to [Datatype](#datatype) to see the different types of variables.
+
+- If you have a collection of values in a list, tuple etc. Python allows you to extract the values into variables. This is called `unpacking`.
 
 ```python
 # ----------- Variables Code Block ----------- #
@@ -54,6 +62,25 @@ age = 25
 print(age) # Output: 25
 age = 89
 print(age) # Output: 89
+
+# Multiple Values to Multiple Variables
+x, y, z = "Orange", "Banana", "Cherry"
+print(x) # Output: Orange
+print(y) # Output: Banana
+print(z) # Output: Cherry
+
+# One Value to Multiple Variables
+x = y = z = "Orange"
+print(x) # Output: Orange
+print(y) # Output: Orange
+print(z) # Output: Orange
+
+# Unpacking
+fruits = ["Apple", "Banana", "Cherry"]
+x, y, z = fruits
+print(x) # Output: Apple
+print(y) # Output: Banana
+print(z) # Output: Cherry
 
 # ----------- End of Variables Code Block ----------- #
 ```
@@ -69,6 +96,10 @@ print(age) # Output: 89
 - Typeless is powerful because you don't have to worry about manually declaring the type or manually changing the type.
 
 - Typeless also has a drawback because it is not type-protected which means a variable can be overwritten by any value type, even if it is not intended to ever be a different type. This can cause bugs that are only caught in runtime.
+
+- If you want to specify the data type of a variable, this can be done with `casting`. Casting does not cause the variable to stay that type though, you can still overwrite the variable to a different type with a normal variable assignment.
+
+- You can get the type of a variable with the `type()` function.
 
 ```python
 # ----------- Datatype Code Block ----------- #
@@ -101,6 +132,17 @@ unique_numbers = {1, 2, 3}
 # None variable - No value, just an empty variable.
 empty_value = None
 
+# Casting
+x = str(3)    # x will be "3" (string)
+y = int(3)    # y will be 3 (integer)
+z = float(3)  # z will be 3.0 (float)
+x = 5         # x will change to 5 (integer)
+
+# Get Type
+x = 5
+y = "John"
+print(type(x)) # Output: <class 'int'>
+print(type(y)) # Output: <class 'str'>
 # ----------- End of Datatype Code Block ----------- #
 ```
 
@@ -169,4 +211,73 @@ print("sup " * 3) # Output: sup sup sup
 # `hello hello hello ` is stored into the variable `result`, then `result` is printed.
 
 # ----------- End of String Repetition Code Block ----------- #
+```
+
+### Assignment Operators
+
+- The Basic Assignment Operator is the single equals sign (`=`) and this assigns the value on its right to the variable on its left.
+
+- Compound Assignment Operators combine arithmetic operations with assignment. They are a shorthand way of performing operations on a variable & assigning the result back to the variable.
+
+- Compound Assignment Operators modify the actual variable itself so if you want leave that variable alone, you need to use a regular [Arithmetic Operation](#arithmetic-operations) that performs a math equation & assigns the result to a new variable.
+
+```python
+# ----------- Assignment Operators Code Block ----------- #
+
+# Basic Assignment Operator:
+length = 15
+
+# Without Compound Assignment Operators:
+length = 15
+length = length + 5 # Updates length by adding 5 to its current value
+print(length)  # Output: 20
+
+# Using Compound Assignment Operators:
+length = 15
+length += 5  # Shorthand for length = length + 5
+print(length)  # Output: 20
+
+# We can use any other operator in the same way:
+x -= 5  # Subtracts 5 from `x` and assigns the result back to `x`
+x *= 3  # Multiplies `x` by 3 and assigns the result back to `x`
+x /= 3  # Divides `x` by 3 and assigns the result back to `x`)
+x %= 3  # Finds the remainder when `x` is divided by 3 and assigns the result back to `x`
+
+# ----------- End of Assignment Operators Code Block ----------- #
+```
+
+### Arithmetic Operations
+
+- Mathematical/Arithmetic operations can be done inside of `print()` statements or inside of a variable assignment with any operator. There must be no quote marks, for if there is then it's treated as a string.
+
+```python
+# ----------- Arithmetic Operations Code Block ----------- #
+
+# Without quotes: The expression is evaluated, and the result is printed:
+print(2 + 4) # Output: 6
+
+# With quotes: The expression is treated as text (a string) and printed as is:
+print("2 + 4") # Output: 2 + 4
+
+a = 6
+b = 3
+print(a + b)  # Output: 9
+print(a * b)  # Output: 18
+print(a / b)  # Output: 2.0
+# Integer Division (//) divides the numbers & returns a whole number, discarding the remainder
+result = 10 // 3 # Output: 3 : 10 / 3 = 3.333.... & 0.333... is dropped.
+
+# Modulo (%) returns the remainder of a division
+print(a % b) # Output: 0 : No remainder from 6 / 3
+
+# Exponent (**) raises a number to the power of another number.
+print(a ** b)  # Output: 216 : 6 to the power of 3 is 216 (6 * 6 * 6)
+
+# Variable Assignment
+age = 45 + 23
+print(age) # Output: 68
+c = a + b
+print(c) # Output: 9
+
+# ----------- End of Arithmetic Operations Code Block ----------- #
 ```
